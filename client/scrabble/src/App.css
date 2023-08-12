@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Heebo;
+    src: url("./assets/Heebo-VariableFont_wght.ttf");
+}
+
+.scrabble-grid{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(45deg, rgb(2, 31, 2), rgb(12, 39, 12));
+    display: flex;
+    font-family: Heebo;
+}
+
+.scrabble-instructions{
+    gap: 1rem;
+    height: 85%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.scrabble-my-letters{
+    display: flex;
+    justify-content: center;
+}
+
+.my-letters-letter{
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 0.2rem;
+    background: rgb(255, 236, 194);
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    & h1{
+        font-size: 2.7rem;
+    }
+
+    & h3{
+        position: absolute;
+        bottom: 0;
+        left: 0.2rem;
+        font-size: 1rem;
+    }
+}

@@ -1,4 +1,4 @@
-declare enum TileType {
+enum TileType {
   Normal,
   DoubleLetter,
   TripleLetter,
