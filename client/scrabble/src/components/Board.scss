@@ -1,0 +1,38 @@
+.scrabble-board{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 0 2rem;
+}
+
+.scrabble-board-grid{
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    
+}
+
+.scrabble-board-tile{
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(253, 251, 240, 0.558);
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 2px;
+
+    &-1{
+        background: rgba(76, 170, 253, 0.702);
+    }
+    &-2{
+        background: rgba(23, 67, 189, 0.702);
+    }
+    &-3{
+        background: rgba(255, 154, 252, 0.788);
+    }
+    &-4{
+        background: rgba(194, 20, 20, 0.702);
+    }
+}
