@@ -5,11 +5,11 @@ declare interface Turn {
 }
 
 enum TileType {
-  Normal = 1,
-  DoubleLetter = 2,
-  TripleLetter = 3,
-  DoubleWord = 4,
-  TripleWord = 5,
+  Normal,
+  DoubleLetter,
+  TripleLetter,
+  DoubleWord,
+  TripleWord,
 }
 
 declare interface Letter {
@@ -18,8 +18,6 @@ declare interface Letter {
 }
 
 declare interface Tile {
-  x: number
-  y: number
   type: TileType;
   letter: Letter;
   submitted: boolean;
