@@ -19,7 +19,7 @@ declare interface Letter {
 
 declare interface Tile {
   type: TileType;
-  letter: Letter;
+  letter?: Letter;
   submitted: boolean;
 }
 

@@ -1,4 +1,4 @@
-import Board from "../components/Board"
+// import Board from "../components/Board" TODO
 import * as consts from "./consts"
 
 // Fill letters bank based on the rules given above
@@ -151,6 +151,7 @@ const submitLetters = (board: Tile[]) => {
     return numLetters;
 
 }
+
 const CalcTurnScore = (board: Tile[], turn: Turn, playersList: Player[], playerId: number) => {
     // calc turn score
     let score:number = 0;
@@ -166,6 +167,36 @@ const CalcTurnScore = (board: Tile[], turn: Turn, playersList: Player[], playerI
     playersList[playerId].letters.push(...getLetters(numLetters))
 }
 
+// debug - init board
+const debugInitBoard = () => {
+    const boardSize = 3
+    let board: Tile[] = new Array() as Tile[];
+    for (let i = 0; i < boardSize; i++) {
+        for (let j = 0; j < boardSize; j++) {
+            board[i*boardSize + j].type = 0
+            board[i*boardSize + j].submitted = false
+        }
+    }
+    return board
+}
+// debug - print board
+const debugPrintBoard = (board: Tile[]) => {
+    let str: string = ''
+    board.forEach((tile,index) => {
+        str += '|'
+        if(index % 15 == 0) {
+            str += '\n'
+        }
+        if(tile.letter) {
+            str += tile.letter.text
+        }
+        else {
+            str += ' '
+        } 
+    })
+    console.log(str)
+}
+
 // init game
 const initGame = (playersNames: string[], board: Tile[]) => {   
     // init letters bank and players list
@@ -175,10 +206,17 @@ const initGame = (playersNames: string[], board: Tile[]) => {
     // Make game: loop on player turns on board until letters bank is finished
     let playerId = getRandomNumber(0,playersList.length-1)
     while (lettersBank.length >= 0) {
+        debugPrintBoard(board)
         let turn = doTurn() // with React
         CalcTurnScore(board, turn, playersList, playerId)
         playerId = (playerId + 1) % playersList.length
     }
-};
+}
 
-export {initGame, getLetters, doTurn}
+// debug - main
+const playersNames: string[] = ["Yossi", "Saar"]
+let board = debugInitBoard()
+initGame(playersNames, board)
+
+// export important functions
+export {initGame}

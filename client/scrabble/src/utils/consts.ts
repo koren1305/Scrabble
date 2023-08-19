@@ -1,5 +1,5 @@
 // Rules for the game: what is the value and amount of each letter 
-const rulesDict = [
+const rulesDict: any[]= [
     {text: 'א', value: 3, amount: 3},
     {text: 'ב', value: 3, amount: 4},
     {text: 'ג', value: 8, amount: 1},
@@ -25,6 +25,7 @@ const rulesDict = [
   ];
 
 // init values
-let lettersBank: Letter[] = [];
 const numLettersPerHand: number = 7;
 const scoreUsingAllWords: number = 50;
+
+export {rulesDict, numLettersPerHand, scoreUsingAllWords}
